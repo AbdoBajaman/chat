@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/fontawesome-v6.4.2/css/all.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        .trans {
+            transition: 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="click">
+        <div id="container">
+            <i id="heart" class="fa fa-heart"></i>
+            <span id="like">Like</span>
+            <span id="num">29</span>
+        </div>
+
+    </button>
+
+    <script>
+        $(document).ready(function () {
+            $('#click').click(function () {
+
+
+                if ($('#like').html() === 'Like') {
+                    $('#like').fadeOut(2000, function () {
+                        $('#like').html('Liked').fadeIn(2000);
+                    });
+                    $('#num').fadeOut(2000, function () {
+                        $('#num').html('30').fadeIn(2000);
+                    });
+                    $('#heart').fadeOut(2000, function () {
+                        $('#heart').css("color", "red").fadeIn(2000);
+                    });
+                }
+                else {
+                    $('#like').fadeOut(2000, function () {
+                        $('#like').html('Like').fadeIn(2000);
+                    });
+                    $('#num').fadeOut(2000, function () {
+                        $('#num').html('29').fadeIn(2000);
+                    });
+                    $('#heart').fadeOut(2000, function () {
+                        $('#heart').css("color", "black").fadeIn(2000);
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
