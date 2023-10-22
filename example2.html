@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="node_modules/fontawesome-v6.4.2/css/all.min.css">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            25% {
+                transform: translate(70px, -230px);
+
+            }
+
+            50% {
+                transform: translate(300px, -400px);
+
+            }
+
+            100% {
+                transform: translate(1000px, -450px);
+
+            }
+
+        }
+
+        .smallcircle {
+            height: 10px;
+            width: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: 0px;
+            right: 50px;
+            /* animation-name: move;
+            animation-duration: 5s; */
+        }
+
+        .move {
+            animation-name: move;
+            animation-duration: 5s;
+        }
+
+        .cc {
+            margin-top: 30%;
+            margin-left: 30%;
+        }
+
+        #shopingcard {
+            margin-left: 100%;
+        }
+
+        /* #circle{
+
+        } */
+        #shopingcard {
+            width: 50px;
+            color: white;
+            height: 30px;
+            margin-right: 200px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="shopingcard">
+        <i class="fa fa-shopping-cart"></i>
+        <i id="num">1</i>
+    </div>
+
+    <button class="cc" id="card" style="position: relative;">
+        <div id="circle" class="smallcircle">1</div>
+
+        Add to cart
+
+    </button>
+    <script>
+        // var counter = 1;
+        var counter = 1;
+        $('#card').click(function () {
+            if ($('#circle').hasClass('move')) {
+                $('#circle').removeClass('move');
+            } 
+            else {
+                $('#circle').addClass('move');
+                setTimeout(function () {
+                    $('#num').html(counter);
+                }, 5000);
+                counter ++;
+            }
+        });
+    </script>
+</body>
+
+</html>
