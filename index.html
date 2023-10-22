@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="node_modules/fontawesome-v6.4.2/css/all.min.css">
+
+    <style>
+        body{
+            /* background-color: red; */
+        }
+          
+        #circle {
+        
+        }
+        
+        .tlb{}
+
+        table{
+            /* display: none; */
+            position: absolute;
+            bottom: 100px;
+        
+        }
+        #aaa{
+            position: relative;
+    top: -30px;
+    display: none;
+    width: 194%;
+
+    }
+    .small{
+        position: absolute;
+            height: 40px;
+            width: 40px;
+            bottom: 0px;
+            border-radius: 25px;
+            background-color: gray;
+            margin-left: 0%;
+            margin-top: 0%;
+
+            overflow: hidden;
+    /* margin-left: 97%; */
+    margin-top: 15px;
+    position: absolute;
+    top: 85%;
+    left: 96%;
+    }
+    .up{
+        transition:3s;
+                height:372px;
+                width:500px;
+    }
+    img {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        p {
+            color: white;
+        }
+
+        input::placeholder {
+            color: rgb(126, 120, 120);
+        }
+
+        input {
+            width: 85%;
+            border-radius: 100px;
+            margin-top: 13px;
+            height: 25px;
+            border: 0px;
+            box-shadow: 2px 2px 20px #78747457;
+
+        }
+
+        .msg {
+            clear: left;
+            margin-left: 70%;
+            margin-top: 71px;
+            height: 50px;
+            box-shadow: 1px 7px 13px 0px #6e6a6a38;
+            position: relative;
+            top: -69px;
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 7px;
+            color: red;
+            background-color: gray;
+            display: inline-block;
+        }
+
+        .container-circle {
+            float: left;
+            width: 100px;
+            width: 111px;
+            height: 46px;
+            border-radius: 55px;
+            color: gray;
+            box-shadow: 2px 2px 20px #78747457;
+            margin-top: 10px;
+        }
+
+        h3 {
+            display: inline-block;
+        }
+
+        span {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .right-msg {
+            float: right;
+            box-shadow: 2px 2px 20px #787474;
+            background-color: #333333;
+            border-radius: 20px 20px 0px 20px;
+            margin-top: 10px;
+        }
+
+        .left-msg {
+            margin-left: 0%;
+            width: 300px;
+            height: auto;
+
+            border-radius: 20px 20px 20px 0px;
+            box-shadow: 2px 2px 20px #78747457;
+        }
+
+        .container-img {
+            margin-left: 70%;
+            margin-top: 10%;
+            margin-top: 4px;
+            box-shadow: 2px 2px 10px 0px #524f4f1c;
+        }
+
+        .container-msgs {
+            margin-left: 70%;
+            overflow-y: scroll;
+            height: 250px;
+        }
+
+        p[side="right"] {
+            color: white;
+        }
+
+        .container-msgs #time>p {
+            text-align: right;
+            color: gray;
+            margin-right: 150px;
+
+        }
+        #cchat{
+            position: absolute;
+            display: none;
+    right: 0px;
+    /* height: 3%; */
+    width: 326%;
+    background: white;
+        }
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            25% {
+                transform: translate(70px, -230px);
+
+            }
+
+            50% {
+                transform: translate(300px, -400px);
+
+            }
+
+            100% {
+                transform: translate(1000px, -450px);
+
+            }
+
+        }
+
+        .smallcircle {
+            height: 10px;
+            width: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: 0px;
+            right: 50px;
+            /* animation-name: move;
+            animation-duration: 5s; */
+        }
+
+        .move {
+            animation-name: move;
+            animation-duration: 5s;
+        }
+
+        .cc {
+            margin-top: 30%;
+            margin-left: 30%;
+        }
+
+        #shopingcard {
+            margin-left: 100%;
+        }
+
+        /* #circle{
+
+        } */
+        #shopingcard {
+            width: 50px;
+            color: white;
+            height: 30px;
+            margin-right: 200px;
+            background-color: brown;
+        }
+   .new {
+    position: absolute; 
+    bottom: 0px;
+    right: 0px;
+     height: 50px;
+      width: 50px; 
+      background-color: red;
+      border-radius: 25px;
+   }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div id="circle" class="small" style="">
+        
+
+      
+
+    </div> -->
+    <div id="rrr" class="new" style="">
+        <div id="cchat" style="">
+            <div class="container-img">
+                <img src="0ye2frne.png" alt="">
+                <h3>Tony Start
+                    <br>
+                    <span>Today at 12:56</span>
+    
+                </h3>
+                <i class="fa fa-close" id="close"></i>
+                <!-- <i id="close" class="fa fa-close"></i> -->
+            </div>
+    
+    
+            <div class="container-msgs">
+                <div id="time">
+                    <p style="">Today at 11:41</p>
+                </div>
+                <div class="right-msg">
+                    <p side="right">
+                        Hello, man!What’s up,Mr stark?
+                    </p>
+    
+                </div>
+                <div style="clear: right;">
+    
+                    <div class="left-msg">
+                        <p style="color: black;margin-top: 93px;">kid,where’d you come from?</p>
+    
+                    </div>
+    
+    
+                </div>
+                <div style="clear: left;">
+    
+                    <div class="right-msg">
+                        <p style="">filed trip?</p>
+    
+                    </div>
+    
+    
+                </div>
+                <div style="clear: right;">
+                    <div class="right-msg">
+    
+                        <p side="right">kid,where’d you come from?
+    
+                        </p>
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div style="clear: right;">
+    
+                    <div class="left-msg">
+                        <p style="
+                        color: black
+        ;width: 200px;">kid,where’d you come from?
+                            kid,where’d you come from
+                            kid,where’d you come from
+                            kid,where’d you come from
+                        </p>
+    
+                    </div>
+    
+    
+    
+                </div>
+                <!-- <div style="clear: left;margin-left: 0%">
+                    <div class="container-circle" style="">
+                        <div style="margin-top: 13px;
+                        margin-left: 28px;">
+                            <div>
+    
+    
+                            </div>
+    
+                            <div class="circle">
+    
+    
+                            </div>
+                            <div class="circle">
+    
+    
+                            </div>
+                            <div class="circle">
+    
+    
+                            </div>
+    
+                        </div>
+    
+    
+                    </div>
+                </div> -->
+    
+            </div>
+            <div class="msg">
+                <div style="margin-top: 10px;">
+                    <i style="" class="fa fa-camera"></i>
+                    <i class="fa fa-grin-beam"></i>
+                    <input type="text" name="" id="send" placeholder="Type your message here!">
+                    <i class="fa fa-microphone"></i>
+                    <i class="fa fa-click"></i>
+    
+                </div>
+    
+            </div>
+    
+    
+    
+        </div>
+    </div>
+
+    
+    <button id="btn">
+        <div id="con">
+            <i id="hear" class="fa fa-heart"></i>
+            <span id="like">Like</span>
+            <span id="number">29</span>
+        </div>
+
+    </button>
+
+    <div id="shopingcard">
+        <i class="fa fa-shopping-cart"></i>
+        <i id="num">1</i>
+    </div>
+
+    <button class="cc" id="card" style="position: relative;">
+        <div id="circle" class="smallcircle">1</div>
+
+        Add to cart
+    </button>
+
+    <script>
+        var counter = 1;
+        $('#card').click(function () {
+            $('#circle').toggleClass('move')
+                ;
+
+            setTimeout(function () {
+                $('#num').html(`${counter}`)
+
+            }, 5000)
+            // alert('asdsa')
+            console.log($('#circle'))
+            counter += 1;
+
+            //   $('#circle').removeClass('move');
+
+        });
+
+        // $('#circle').removeClass('move');
+
+
+        $('#btn').click(function () {
+            if ($('#like').html('Liked')) {
+                $('#con').toggle(1000, function () {
+                    // setTimeout(function () {
+                    //     $('#hear').css({
+                    //         color: "red"
+                    //     })
+                    //     $('#like').html("Liked")
+                    //     $('#number').html("30")
+                    // })
+
+                })
+                $('#con').slideDown(1000, function () {
+                    setTimeout(function () {
+                        $('#hear').css({
+                            color: "red",
+                            // width:500
+                            
+                        })
+                        $('#like').html("Liked")
+                        $('#number').html("30")
+                    })
+
+                })
+
+            }
+            // else {
+            //     $('#con').slideUp(1000, function () {
+            //         setTimeout(function () {
+            //             $('#hear').css({
+            //                 color: "white"
+            //             })
+            //             $('#like').html("Like")
+            //             $('#number').html("29")
+            //         })
+
+            //     })
+            //     $('#con').slideDown(1000, function () {
+            //         setTimeout(function () {
+            //             $('#hear').css({
+            //                 color: "red"
+            //             })
+            //             $('#like').html("Like")
+            //             $('#number').html("29")
+            //         })
+
+            //     })
+
+            // }
+
+
+
+        })
+    </script>
+   
+
+
+    
+
+
+
+    <script>
+
+$('#rrr').click(function(){
+    // $(this).removeClass('new')
+    // $(this).addClass('big')
+    $(this).css({
+        transition:"3s",
+        height:"372px",
+                width:"500px"
+        
+    })
+            $('#cchat').css({
+                display:'block'
+            })
+})
+$('#close').click(function(){
+    // $('#rrr').removeClass('new')
+    // $('#rrr').addClass('small')
+    
+    $('#rrr').css({
+        transition:"3s",
+        height:"30px",
+                width:"30px"
+        
+    })
+  
+})
+        $('#send').keypress(function(e){
+            if(e.key=="Enter")
+            {
+                      var input = $('#send').val();
+                var msg = `
+                    <div style='clear: right;'>
+                        <div class='right-msg'>
+                            <p side='right'>${input}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            $('.container-msgs').append(msg);
+
+           
+      
+                // $('#send').val()="a"
+            
+
+            // <div style="clear: right;">
+            //     <div class="right-msg">
+
+            //         <p side="right">kid,where’d you come from?
+
+            //         </p>
+
+            //     </div>
+
+
+
+            // </div>
+
+            
+
+
+
+        })
+        $('#circle').click(function(){
+            
+            $(this).addClass('up')
+            $('#cchat').css({
+                display:'block'
+            })
+        })
+        $('#close').click(function(){
+            // $('#circle').removeClass('small');
+            // $("#circle").removeClass('small');
+            // $("#circle").removeClass('up');
+
+            $('$circle').css({
+                overFlow:none,
+                height:"50px",
+            })
+            $('#aaa').css({
+                display:'none'
+            })
+
+
+            // $("#circle").addClass('small');
+
+
+
+            
+            // $('#circle').css('height',"50px");
+            // $('#circle').css('width',"50px");
+            
+            // $('#circle').addClass('small');
+            console.log($('#circle'))
+        })
+
+        // $('#circle').click(function () {
+        //     var tbl = '';
+        //     tbl += `<tr>
+        //         <td>A</td>`
+        //         + `<td>b</td>`
+        //         + `<td>b</td>`
+        //         + `<td>s</td></tr>`;
+        //         $('#table').append(tbl);
+
+                
+
+        // })
+    </script>
+
+</body>
+
+</html>
