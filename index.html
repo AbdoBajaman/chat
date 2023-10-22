@@ -316,33 +316,7 @@
     
     
                 </div>
-                <!-- <div style="clear: left;margin-left: 0%">
-                    <div class="container-circle" style="">
-                        <div style="margin-top: 13px;
-                        margin-left: 28px;">
-                            <div>
-    
-    
-                            </div>
-    
-                            <div class="circle">
-    
-    
-                            </div>
-                            <div class="circle">
-    
-    
-                            </div>
-                            <div class="circle">
-    
-    
-                            </div>
-    
-                        </div>
-    
-    
-                    </div>
-                </div> -->
+            
     
             </div>
             <div class="msg">
@@ -363,101 +337,7 @@
     </div>
 
     
-    <button id="btn">
-        <div id="con">
-            <i id="hear" class="fa fa-heart"></i>
-            <span id="like">Like</span>
-            <span id="number">29</span>
-        </div>
 
-    </button>
-
-    <div id="shopingcard">
-        <i class="fa fa-shopping-cart"></i>
-        <i id="num">1</i>
-    </div>
-
-    <button class="cc" id="card" style="position: relative;">
-        <div id="circle" class="smallcircle">1</div>
-
-        Add to cart
-    </button>
-
-    <script>
-        var counter = 1;
-        $('#card').click(function () {
-            $('#circle').toggleClass('move')
-                ;
-
-            setTimeout(function () {
-                $('#num').html(`${counter}`)
-
-            }, 5000)
-            // alert('asdsa')
-            console.log($('#circle'))
-            counter += 1;
-
-            //   $('#circle').removeClass('move');
-
-        });
-
-        // $('#circle').removeClass('move');
-
-
-        $('#btn').click(function () {
-            if ($('#like').html('Liked')) {
-                $('#con').toggle(1000, function () {
-                    // setTimeout(function () {
-                    //     $('#hear').css({
-                    //         color: "red"
-                    //     })
-                    //     $('#like').html("Liked")
-                    //     $('#number').html("30")
-                    // })
-
-                })
-                $('#con').slideDown(1000, function () {
-                    setTimeout(function () {
-                        $('#hear').css({
-                            color: "red",
-                            // width:500
-                            
-                        })
-                        $('#like').html("Liked")
-                        $('#number').html("30")
-                    })
-
-                })
-
-            }
-            // else {
-            //     $('#con').slideUp(1000, function () {
-            //         setTimeout(function () {
-            //             $('#hear').css({
-            //                 color: "white"
-            //             })
-            //             $('#like').html("Like")
-            //             $('#number').html("29")
-            //         })
-
-            //     })
-            //     $('#con').slideDown(1000, function () {
-            //         setTimeout(function () {
-            //             $('#hear').css({
-            //                 color: "red"
-            //             })
-            //             $('#like').html("Like")
-            //             $('#number').html("29")
-            //         })
-
-            //     })
-
-            // }
-
-
-
-        })
-    </script>
    
 
 
@@ -468,8 +348,7 @@
     <script>
 
 $('#rrr').click(function(){
-    // $(this).removeClass('new')
-    // $(this).addClass('big')
+    
     $(this).css({
         transition:"3s",
         height:"372px",
@@ -508,72 +387,21 @@ $('#close').click(function(){
 
            
       
-                // $('#send').val()="a"
-            
-
-            // <div style="clear: right;">
-            //     <div class="right-msg">
-
-            //         <p side="right">kid,where’d you come from?
-
-            //         </p>
-
-            //     </div>
+          
 
 
 
-            // </div>
-
-            
 
 
 
         })
-        $('#circle').click(function(){
-            
-            $(this).addClass('up')
-            $('#cchat').css({
-                display:'block'
-            })
-        })
-        $('#close').click(function(){
-            // $('#circle').removeClass('small');
-            // $("#circle").removeClass('small');
-            // $("#circle").removeClass('up');
+     
 
-            $('$circle').css({
-                overFlow:none,
-                height:"50px",
-            })
-            $('#aaa').css({
-                display:'none'
-            })
-
-
-            // $("#circle").addClass('small');
-
-
-
-            
-            // $('#circle').css('height',"50px");
-            // $('#circle').css('width',"50px");
-            
-            // $('#circle').addClass('small');
-            console.log($('#circle'))
-        })
-
-        // $('#circle').click(function () {
-        //     var tbl = '';
-        //     tbl += `<tr>
-        //         <td>A</td>`
-        //         + `<td>b</td>`
-        //         + `<td>b</td>`
-        //         + `<td>s</td></tr>`;
-        //         $('#table').append(tbl);
+      
 
                 
 
-        // })
+    
     </script>
 
 </body>
